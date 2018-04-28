@@ -1,0 +1,7 @@
+{
+	"name":  "guestbook",
+	"private": true , 
+	"scripts": {
+		"start": "node app"
+	}
+}
