@@ -10,14 +10,19 @@ const http = require('http');
 const logger = require('morgan');
 const path = require('path');
 const express = require('express');
-
+const bodyParser = require("body-parser");
 const app = express();
+let db = [];
+app.locals.db = db;
+
 
 app.set('views', path.resolve(__dirname, '../views'));
 app.set('images', path.resolve(__dirname, '../images'));
 
 app.set('view engine', 'ejs' );
 app.use(logger("dev"));
+app.use(bodyParser.urlencoded({ extended: false}));
+
 app.get('/troy', (req, res)=>{
 	res.render("header", {
 		message: "(*&^(*&^*(&^*&^(*&^))))))))))"
@@ -30,7 +35,10 @@ app.get('/rochester', (req, res)=>{
 });
 app.get('/ferndale/:hulu', (req, res)=>{
 	res.send(`welllllllll... ${req.params.hulu}-${req.params.hulu}-${req.params.hulu}`);
+} );
 
+app.use((req, res)=>{
+	res.status(404).render('404');
 } );
 
 const PORT = 3001;
