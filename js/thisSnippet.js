@@ -19,4 +19,6 @@ gal2 = {
 	sayName: sayNameForAll
 }
 
+gal1.sayName();
 gal2.sayName();
+sayNameForAll();
