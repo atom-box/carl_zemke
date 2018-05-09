@@ -22,3 +22,6 @@ gal2 = {
 gal1.sayName();
 gal2.sayName();
 sayNameForAll();
+
+// I wrote this comment on the windows machine at work as a test
+
